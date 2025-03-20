@@ -181,6 +181,7 @@ public class CqlMigratorConsistencyLevelIntegrationTest {
                 prepareInsertQuery,
                 Lists.newArrayList(
                         com.datastax.oss.simulacron.common.codec.ConsistencyLevel.ONE,
+                        com.datastax.oss.simulacron.common.codec.ConsistencyLevel.LOCAL_ONE,
                         com.datastax.oss.simulacron.common.codec.ConsistencyLevel.ALL),
                 new LinkedHashMap<>(ImmutableMap.of("name", lockName + ".schema_migration", "client", clientId)),
                 new LinkedHashMap<>(ImmutableMap.of("name", "varchar", "client", "varchar"))))
@@ -197,6 +198,7 @@ public class CqlMigratorConsistencyLevelIntegrationTest {
                 deleteQuery,
                 Lists.newArrayList(
                         com.datastax.oss.simulacron.common.codec.ConsistencyLevel.ONE,
+                        com.datastax.oss.simulacron.common.codec.ConsistencyLevel.LOCAL_ONE,
                         com.datastax.oss.simulacron.common.codec.ConsistencyLevel.ALL),
                 new LinkedHashMap<>(ImmutableMap.of("name", lockName + ".schema_migration", "client", clientId)),
                 new LinkedHashMap<>(ImmutableMap.of("name", "varchar", "client", "varchar"))))
